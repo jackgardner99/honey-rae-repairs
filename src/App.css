@@ -86,3 +86,18 @@
     color: var(--info);
     font-family: "Roboto", sans-serif;
   }
+
+  /* EMPLOYEES */
+
+    .employees {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 3rem;
+  }
+
+  .employees > * {
+    flex-basis: 31%;
+    margin: 0.5rem;
+  }
