@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { getEmployees } from "../../services/employeeService"
-import { User } from "../Customers/User"
+import { User } from "../customers/User"
 
 export const EmployeeList = () => {
     const [employees, setEmployees] = useState([])

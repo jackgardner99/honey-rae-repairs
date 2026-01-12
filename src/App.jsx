@@ -1,14 +1,13 @@
-import { TicketList } from "./components/Tickets/TicketList"
+import { TicketList } from "./components/tickets/TicketList"
 import "./css/App.css"
-import { CustomerList } from "./components/Customers/CustomerList"
-import { EmployeeList } from "./components/Employees/EmployeeList"
+import { CustomerList } from "./components/customers/CustomerList"
+import { EmployeeList } from "./components/employees/EmployeeList"
+import { Routes, Route } from "react-router-dom"
 
 export const App = () => {
   return (
-    <>
-      {/* <TicketList /> */}
-      {/* <CustomerList /> */}
-      <EmployeeList />
-    </>
+    <Routes>
+      <Route path="/tickets" element={<TicketList />} />
+    </Routes>
   )
 }
