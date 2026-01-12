@@ -10,6 +10,7 @@ export const TicketList = () => {
     const [searchTerm, setSearchTerm] = useState("")
 
     useEffect(() => {
+        console.log("initial")
         getAllTickets().then((ticketsArray) => {
             setAllTickets(ticketsArray)
         })
@@ -22,15 +23,15 @@ export const TicketList = () => {
             )
             setFilteredTickets(emergencyTickets)
         } else {
+            console.log("allTickets")
             setFilteredTickets(allTickets)
         }
     }, [showEmergencyOnly, allTickets])
 
     useEffect(() => {
-        const foundTickets = allTickets.filter((ticket) => {
-            ticket.description.toLowerCase().includes(searchTerm.toLowerCase())
-        })
-        setFilteredTickets(foundTickets)
+            const foundTickets = allTickets.filter((ticket) => ticket.description.toLowerCase().includes(searchTerm.toLowerCase()))
+            setFilteredTickets(foundTickets)
+
     }, [searchTerm, allTickets])
 
     return (
