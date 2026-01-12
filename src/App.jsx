@@ -1,5 +1,5 @@
 import { TicketList } from "./components/Tickets/TicketList"
-import "./App.css"
+import "./css/App.css"
 import { CustomerList } from "./components/Customers/CustomerList"
 import { EmployeeList } from "./components/Employees/EmployeeList"
 
