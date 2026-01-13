@@ -5,6 +5,8 @@ import { EmployeeList } from "./components/employees/EmployeeList"
 import { Routes, Route } from "react-router-dom"
 import { NavBar } from "./components/nav/NavBar"
 import { Outlet } from "react-router-dom"
+import { Welcome } from "./components/welcome/Welcome"
+import { CustomerDetails } from "./components/customers/CustomerDetails"
 
 export const App = () => {
   return (
@@ -14,8 +16,12 @@ export const App = () => {
           <NavBar />
           <Outlet />
         </>}>
+          <Route index element={<Welcome />} />
           <Route path="tickets" element={<TicketList />} />
-          <Route path="customers" element={<CustomerList />} />
+          <Route path="customers">
+            <Route index element={<CustomerList />} />
+            <Route path=":customerId" element={<CustomerDetails />} />
+          </Route>
           <Route path="employees" element={<EmployeeList />} />      
       </Route>
     </Routes>
