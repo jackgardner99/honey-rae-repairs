@@ -4,27 +4,35 @@ import { useEffect, useState } from "react"
 
 export const EmployeeDetails = () => {
     const { employeeId } = useParams()
+    // console.log(employeeId)
 
     const [employee, setEmployee] = useState({})
 
     useEffect(() => {
-        getEmployeeById(employeeId).then(setEmployee)
-    }, [employee])
-
-    // const employee = getEmployeeById(employeeId)
-    // console.log(employee)
+        getEmployeeById(employeeId).then((data) => {
+            const employeeObj = data[0]
+            setEmployee(employeeObj)
+        })
+    }, [employeeId])
     
-    return <div className="employee">
-        <div className="employee-info">
-            <div className="employee-header">{employee.user?.fullName}</div>
+    return <section className="employee">
+        <header className="employee-header">{employee.user?.fullName}</header>
+        <div>
+            <span className="employee-info">Email : </span>
+            {employee.user?.email}
         </div>
-        <div className="employee-info">
-            <div>Email {employee.user?.email}</div>
-            <div>Specialty {employee.specialty}</div>
-            <div>Rate {employee.rate}</div>
+        <div>
+            <span className="employee-info">Specialty : </span>
+            {employee.specialty}
         </div>
-        <div className="employee-info">
-            <div className="employee-footer">Currently working on {employee.employeeTickets} tickets</div>
+        <div>
+            <span className="employee-info">Rate : </span>
+            {employee.rate}
         </div>
-    </div>
+        <footer className="employee-footer">
+            <div>
+                Currently working on {employee.employeeTickets?.length} tickets
+            </div>
+        </footer>
+    </section>
 }

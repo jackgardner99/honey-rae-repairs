@@ -3,7 +3,7 @@ export const getEmployees = () => {
     .then((res) => res.json())
 }
 
-export const getEmployeeById = (userId) => {
-    return fetch(`http://localhost:3000/employees?userId=${userId}&_expand=user&_embed=employeeTickets`)
+export const getEmployeeById = (id) => {
+    return fetch(`http://localhost:3000/employees?id=${id}&_expand=user&_embed=employeeTickets`)
     .then((res) => res.json())
 }
