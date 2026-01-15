@@ -13,6 +13,7 @@ export const Login = () => {
 
     getUserByEmail(email).then((foundUsers) => {
       if (foundUsers.length === 1) {
+        console.log("click")
         const user = foundUsers[0]
         localStorage.setItem(
           "honey_user",
