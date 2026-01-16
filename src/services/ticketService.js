@@ -23,3 +23,12 @@ export const updateTicket = (ticket) => {
         body: JSON.stringify(ticket)
     })
 }
+
+export const deleteTicket = (ticket) => {
+    return fetch(`http://localhost:3000/serviceTickets/${ticket.id}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+}
