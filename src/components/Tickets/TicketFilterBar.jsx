@@ -26,7 +26,10 @@ export const TicketFilterBar = ({ setShowEmergencyOnly, setSearchTerm, currentUs
                     setSearchTerm(event.target.value)
                 }}/>
                 </> : <>
-                    <button className="filter-btn btn-primary" onClick={navigate("/tickets/create")}>Create Ticket</button>
+                    <button className="filter-btn btn-primary" onClick={() => {
+                        navigate("create")
+                        console.log("navigate to create")
+                    }}>Create Ticket</button>
                     <button className="filter-btn btn-info" onClick={() => {
                         setShowOpenTickets(true)
                     }}>Open Tickets</button>
